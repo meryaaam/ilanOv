@@ -6,24 +6,14 @@ import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
 import Link from "next/link";
-"use client"; 
-import { useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import { transform } from "framer-motion"
+import AnimatedImage from "@/helpers/AnimatedImage";
 
 const Home = () => {
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Generate random values for translation (adjust as needed)
-      const randomX = Math.random() * 100 - 50; // Random value between -50 and 50
-      const randomY = Math.random() * 100 - 50; // Random value between -50 and 50
-      const randomZ = Math.random() * 100 - 50; // Random value between -50 and 50
 
-      // Update translate values
-      setTranslateValues({ x: randomX, y: randomY, z: randomZ });
-    }, 3000); // Run every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+  const transformer = transform([0, 100], [0, 360], { clamp: true })
+  const rotate = transformer(500) // 180
 
   const homepage = getListPage("homepage/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
@@ -36,11 +26,6 @@ const Home = () => {
     banner: { title: string; image: string; content?: string; button?: Button };
     features: Feature[];
   } = frontmatter;
-  const [translateValues, setTranslateValues] = useState({ x: 0, y: 0, z: 0 });
-  
-  
- 
-
 
 
   return (
@@ -49,45 +34,45 @@ const Home = () => {
       <section className="section pt-14">
         <div className="container">
           <div className="row justify-center">
-            <div className="lg:col-5 md:col-4 mb-8 text-center">
-              <h1
-                className="mb-4 text-h3 lg:text-h1"
-                dangerouslySetInnerHTML={markdownify(banner.title)}
-              />
-              <p
-                className="mb-8"
-                dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
-              />
-              {banner.button!.enable && (
-                <Link
-                  className="btn btn-primary"
-                  href={banner.button!.link}
-                  target={
-                    banner.button!.link.startsWith("http") ? "_blank" : "_self"
-                  }
-                  rel="noopener"
-                >
-                  {banner.button!.label}
-                </Link>
-              )}
-              </div>
-              <div className="lg:col-7 md:col-8 mb-8 text-center">
-              
-            
-            {banner.image && (
-              <div className="col-8">
-                <ImageFallback
-                  src={banner.image}
-                  className="mx-auto"
-                  width="800"
-                  height="420"
-                  alt="banner image"
-                  style={{ transform: 'translate3d(16.814px, -16.814px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)', transformStyle: 'preserve-3d', willChange: 'transform' }}
-                    
-                  priority
+            <div className="lg:col-6 md:col-6 mb-6 text-center">
+
+                <h1
+                  className="mb-4 text-h3 lg:text-h1"
+                  dangerouslySetInnerHTML={markdownify(banner.title)}
                 />
+                <p
+                  className="mb-8"
+                  dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
+                />
+
+                {banner.button!.enable && (
+                  <Link
+                    className="btn btn-primary"
+                    href={banner.button!.link}
+                    target={
+                      banner.button!.link.startsWith("http") ? "_blank" : "_self"
+                    }
+                    rel="noopener"
+                  >
+                    {banner.button!.label}
+
+                  </Link>
+                )}
               </div>
-            )}
+
+              <div className="lg:col-6 md:col-6 mb-8 text-center">
+                 {banner.image && (
+                    <div className="col-10">
+                      <AnimatedImage
+                        src={banner.image}
+
+                      />
+
+
+
+
+                    </div>
+                  )}
             </div>
           </div>
         </div>
@@ -111,18 +96,9 @@ const Home = () => {
                   width={520}
                   alt={feature.title}
                 />
-                <ImageFallbackWithTranslate
-                
-                 src={banner.image}
-                 className="mx-auto"
-                 width="800"
-                 height="420"
-                 alt="banner image"
-                 priority
-                 translateValues={translateValues}
-               />
-                
-                
+
+
+
               </div>
               <div
                 className={`md:col-7 lg:col-6 ${
@@ -165,21 +141,5 @@ const Home = () => {
   );
 };
 
-const ImageFallbackWithTranslate = ({ src, className, width, height, alt, priority, translateValues }) => {
-  return (
-    <ImageFallback
-      src={src}
-      className={className}
-      width={width}
-      height={height}
-      alt={alt}
-      priority={priority}
-      style={{
-        transform: `translate3d(${translateValues.x}px, ${translateValues.y}px, ${translateValues.z}px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-        transformStyle: 'preserve-3d',
-        willChange: 'transform'
-      }}
-    />
-  );
-};
+
 export default Home;
