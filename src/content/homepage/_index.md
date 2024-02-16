@@ -15,7 +15,7 @@ features:
     image: "/images/service-1.png"
     content: "Unlock the full potential of your business with SynergySuite, our comprehensive suite of integrated development and marketing solutions designed to maximize growth and impact."
     bulletpoints:
-      - ""
+      
      # - "10+ Pre-build pages"
      # - "95+ Google Pagespeed Score"
      # - "Build with Next and TailwindCSS for easy and customizable styling"
@@ -23,7 +23,7 @@ features:
      # - "SEO-optimized for better search engine rankings"
      # - "**Open-source and free** for personal and commercial use"
     button:
-      enable: false
+      enable: true
       label: "Contact us"
       link: "#"
 
