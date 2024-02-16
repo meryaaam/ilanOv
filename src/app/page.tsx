@@ -9,6 +9,9 @@ import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 import { transform } from "framer-motion"
 import AnimatedImage from "@/helpers/AnimatedImage";
+import { Features } from "@/partials/Features";
+import { MoreFeatures } from "@/partials/MoreFeatures";
+import { StreamlinedExperience } from "@/partials/StreamlinedExperience";
 
 const Home = () => {
 
@@ -81,6 +84,7 @@ const Home = () => {
           <div className="container">
             <div className="row items-center justify-between">
               <div
+ 
                 className={`mb:md-0 mb-6 md:col-5 ${
                   index % 2 !== 0 && "md:order-2"
                 }`}
@@ -108,14 +112,14 @@ const Home = () => {
                   className="mb-8 text-lg"
                   dangerouslySetInnerHTML={markdownify(feature.content)}
                 />
-                <ul>
+                {/*<ul>
                   {feature.bulletpoints.map((bullet: string) => (
                     <li className="relative mb-4 pl-6" key={bullet}>
                       <FaCheck className={"absolute left-0 top-1.5"} />
                       <span dangerouslySetInnerHTML={markdownify(bullet)} />
                     </li>
                   ))}
-                </ul>
+                  </ul>*/}
                 {feature.button.enable && (
                   <Link
                     className="btn btn-primary mt-5"
@@ -131,6 +135,12 @@ const Home = () => {
       ))}
 
       <Testimonials data={testimonial} />
+      <Features   />
+      <div className="relative z-10   overflow-x-clip ">
+     
+       
+       <StreamlinedExperience />
+      </div>
       <CallToAction data={callToAction} />
     </>
   );
