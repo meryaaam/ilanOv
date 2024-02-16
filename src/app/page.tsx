@@ -64,13 +64,8 @@ const Home = () => {
                  {banner.image && (
                     <div className="col-10">
                       <AnimatedImage
-                        src={banner.image}
-
-                      />
-
-
-
-
+                        src={banner.image} 
+                      /> 
                     </div>
                   )}
             </div>
