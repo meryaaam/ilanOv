@@ -4,6 +4,7 @@ banner:
   title: "Pioneering Innovation in Development and Marketing Solutions."
   content: "At Ilanov, innovation isn't just a buzzword—it's our ethos.With a passion for pushing boundaries and a commitment to delivering results, we are your trusted partner in navigating the ever-evolving landscape of technology and marketing."
   image: "/images/rocket.png"
+  image_dark_mode: "/images/rocket.png"
   button:
     enable: true
     label: "Discover Now"

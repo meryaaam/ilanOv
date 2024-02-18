@@ -12,7 +12,7 @@ import AnimatedImage from "@/helpers/AnimatedImage";
 import { Features } from "@/partials/Features";
 import { MoreFeatures } from "@/partials/MoreFeatures";
 import { StreamlinedExperience } from "@/partials/StreamlinedExperience";
-
+ 
 const Home = () => {
 
   const transformer = transform([0, 100], [0, 360], { clamp: true })
@@ -26,11 +26,10 @@ const Home = () => {
     banner,
     features,
   }: {
-    banner: { title: string; image: string; content?: string; button?: Button };
+    banner: { title: string; image: string; dark:string ;content?: string; button?: Button };
     features: Feature[];
   } = frontmatter;
-
-
+ 
   return (
     <>
       <SeoMeta />
@@ -66,9 +65,10 @@ const Home = () => {
               <div className="lg:col-6 md:col-6 mb-8 text-center">
                  {banner.image && (
                     <div className="col-10">
+                      {/* <Banner  />*/}
                       <AnimatedImage
-                        src={banner.image} 
-                      /> 
+                      
+                      />
                     </div>
                   )}
             </div>

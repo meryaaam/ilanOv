@@ -9,7 +9,11 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
     "logo_height": "61",
-    "logo_text": "ilanov"
+    "logo_text": "ilanov",
+    "banner": "/images/rocket.png",
+    "banner_darkmode": "/images/global-in-blue.png",
+    "banner_width": "150",
+    "banner_height": "61"
   },
 
   "settings": {

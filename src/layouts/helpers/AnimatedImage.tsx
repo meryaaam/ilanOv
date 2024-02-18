@@ -1,8 +1,10 @@
 "use client" ;
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { useSpring, animated, to } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import ImageFallback from '@/helpers/ImageFallback';
+import { useTheme } from 'next-themes';
+import config from "@/config/config.json";
 
 const calcX = (y: number, ly: number) => -(y - ly - window.innerHeight / 2) / 20
 const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20
@@ -16,18 +18,39 @@ interface AnimatedImageProps {
 }
 
 
-export default function AnimatedImage({ src }: AnimatedImageProps){
+export default function AnimatedImage({ src }: { src?: string }){
+
+  const {
+    banner,
+    banner_darkmode, 
+  }: {
+    banner: string;
+    banner_darkmode: string;
+ 
+  } = config.site;
+
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  
+
   useEffect(() => {
     const preventDefault = (e: Event) => e.preventDefault()
     document.addEventListener('gesturestart', preventDefault)
     document.addEventListener('gesturechange', preventDefault)
-
+    setMounted(true)
     return () => {
       document.removeEventListener('gesturestart', preventDefault)
       document.removeEventListener('gesturechange', preventDefault)
+      
     }
   }, [])
 
+
+  const resolvedLogo =
+      mounted && (theme === "dark" || resolvedTheme === "dark")
+        ? banner_darkmode
+        : banner ;
+  const logoPath = src ? src : resolvedLogo;
 
   const domTarget = useRef(null)
   const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
@@ -81,7 +104,7 @@ export default function AnimatedImage({ src }: AnimatedImageProps){
           rotateZ,
         }}>
          <ImageFallback
-                        src={src}
+                        src={logoPath}
                         className="mx-auto"
                         width="800"
                         height="420"
