@@ -43,7 +43,7 @@ const SeoMeta = ({
       />
 
       {/* author from config.json */}
-      <meta name="author" content={meta_author} />
+      <meta name="team" content={meta_author} />
 
       {/* og-title */}
       <meta

@@ -13,7 +13,7 @@ export const dynamicParams = false;
 
 // generate static params
 export const generateStaticParams: () => { single?: string }[] = () => {
-  const authors: Author[] = getSinglePage("authors");
+  const authors: Author[] = getSinglePage("team");
 
   const paths = authors.map((author) => ({
     single: author.slug,
@@ -23,7 +23,7 @@ export const generateStaticParams: () => { single?: string }[] = () => {
 };
 
 const AuthorSingle = ({ params }: { params: { single: string } }) => {
-  const authors: Author[] = getSinglePage("authors");
+  const authors: Author[] = getSinglePage("team");
   const author = authors.filter((page) => page.slug === params.single)[0];
   const { frontmatter, content } = author;
   const { title, social, meta_title, description, image } = frontmatter;

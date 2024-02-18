@@ -1,6 +1,6 @@
 ---
-title: Sam Wilson
-email: samwilson@email.com
+title: Heba Jaffeli
+email: jaffeliheba@gmail.com
 image: "/images/avatar.png"
 description: this is meta description
 social:

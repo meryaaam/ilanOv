@@ -7,8 +7,17 @@ import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
-
+import { transform } from "framer-motion"
+import AnimatedImage from "@/helpers/AnimatedImage";
+import { Features } from "@/partials/Features";
+import { MoreFeatures } from "@/partials/MoreFeatures";
+import { StreamlinedExperience } from "@/partials/StreamlinedExperience";
+ 
 const Home = () => {
+
+  const transformer = transform([0, 100], [0, 360], { clamp: true })
+  const rotate = transformer(500) // 180
+
   const homepage = getListPage("homepage/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
   const callToAction = getListPage("sections/call-to-action.md");
@@ -17,50 +26,52 @@ const Home = () => {
     banner,
     features,
   }: {
-    banner: { title: string; image: string; content?: string; button?: Button };
+    banner: { title: string; image: string; dark:string ;content?: string; button?: Button };
     features: Feature[];
   } = frontmatter;
-
+ 
   return (
     <>
       <SeoMeta />
       <section className="section pt-14">
         <div className="container">
           <div className="row justify-center">
-            <div className="lg:col-7 md:col-9 mb-8 text-center">
-              <h1
-                className="mb-4 text-h3 lg:text-h1"
-                dangerouslySetInnerHTML={markdownify(banner.title)}
-              />
-              <p
-                className="mb-8"
-                dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
-              />
-              {banner.button!.enable && (
-                <Link
-                  className="btn btn-primary"
-                  href={banner.button!.link}
-                  target={
-                    banner.button!.link.startsWith("http") ? "_blank" : "_self"
-                  }
-                  rel="noopener"
-                >
-                  {banner.button!.label}
-                </Link>
-              )}
-            </div>
-            {banner.image && (
-              <div className="col-12">
-                <ImageFallback
-                  src={banner.image}
-                  className="mx-auto"
-                  width="800"
-                  height="420"
-                  alt="banner image"
-                  priority
+            <div className="lg:col-6 md:col-6 mb-6 text-center">
+
+                <h1
+                  className="mb-4 text-h3 lg:text-h1"
+                  dangerouslySetInnerHTML={markdownify(banner.title)}
                 />
+                <p
+                  className="mb-8"
+                  dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
+                />
+
+                {banner.button!.enable && (
+                  <Link
+                    className="btn btn-primary"
+                    href={banner.button!.link}
+                    target={
+                      banner.button!.link.startsWith("http") ? "_blank" : "_self"
+                    }
+                    rel="noopener"
+                  >
+                    {banner.button!.label}
+
+                  </Link>
+                )}
               </div>
-            )}
+
+              <div className="lg:col-6 md:col-6 mb-8 text-center">
+                 {banner.image && (
+                    <div className="col-10">
+                      {/* <Banner  />*/}
+                      <AnimatedImage
+                      
+                      />
+                    </div>
+                  )}
+            </div>
           </div>
         </div>
       </section>
@@ -73,6 +84,7 @@ const Home = () => {
           <div className="container">
             <div className="row items-center justify-between">
               <div
+ 
                 className={`mb:md-0 mb-6 md:col-5 ${
                   index % 2 !== 0 && "md:order-2"
                 }`}
@@ -83,6 +95,9 @@ const Home = () => {
                   width={520}
                   alt={feature.title}
                 />
+
+
+
               </div>
               <div
                 className={`md:col-7 lg:col-6 ${
@@ -97,14 +112,14 @@ const Home = () => {
                   className="mb-8 text-lg"
                   dangerouslySetInnerHTML={markdownify(feature.content)}
                 />
-                <ul>
+                {/*<ul>
                   {feature.bulletpoints.map((bullet: string) => (
                     <li className="relative mb-4 pl-6" key={bullet}>
                       <FaCheck className={"absolute left-0 top-1.5"} />
                       <span dangerouslySetInnerHTML={markdownify(bullet)} />
                     </li>
                   ))}
-                </ul>
+                  </ul>*/}
                 {feature.button.enable && (
                   <Link
                     className="btn btn-primary mt-5"
@@ -120,9 +135,16 @@ const Home = () => {
       ))}
 
       <Testimonials data={testimonial} />
+      <Features   />
+      <div className="relative z-10   overflow-x-clip ">
+     
+       
+       <StreamlinedExperience />
+      </div>
       <CallToAction data={callToAction} />
     </>
   );
 };
+
 
 export default Home;

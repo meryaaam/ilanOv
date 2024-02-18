@@ -1,7 +1,7 @@
 ---
-title: John Doe
-email: johndoe@email.com
-image: "/images/avatar.png"
+title: Meryam Chouaiti
+email: meryamchouaiti@email.com
+image: "/images/avatar.jpg"
 description: this is meta description
 social:
   - name: github

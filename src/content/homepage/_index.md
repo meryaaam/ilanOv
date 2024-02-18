@@ -3,7 +3,8 @@
 banner:
   title: "Pioneering Innovation in Development and Marketing Solutions."
   content: "At Ilanov, innovation isn't just a buzzword—it's our ethos.With a passion for pushing boundaries and a commitment to delivering results, we are your trusted partner in navigating the ever-evolving landscape of technology and marketing."
-  image: "/images/banner.png"
+  image: "/images/rocket.png"
+  image_dark_mode: "/images/rocket.png"
   button:
     enable: true
     label: "Discover Now"
@@ -15,7 +16,7 @@ features:
     image: "/images/service-1.png"
     content: "Unlock the full potential of your business with SynergySuite, our comprehensive suite of integrated development and marketing solutions designed to maximize growth and impact."
     bulletpoints:
-      - ""
+      
      # - "10+ Pre-build pages"
      # - "95+ Google Pagespeed Score"
      # - "Build with Next and TailwindCSS for easy and customizable styling"
@@ -23,7 +24,7 @@ features:
      # - "SEO-optimized for better search engine rankings"
      # - "**Open-source and free** for personal and commercial use"
     button:
-      enable: false
+      enable: true
       label: "Contact us"
       link: "#"
 

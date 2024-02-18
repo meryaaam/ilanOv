@@ -8,8 +8,12 @@
     "logo": "/images/logo.png",
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
-    "logo_height": "27",
-    "logo_text": "Nextplate"
+    "logo_height": "61",
+    "logo_text": "ilanov",
+    "banner": "/images/rocket.png",
+    "banner_darkmode": "/images/global-in-blue.png",
+    "banner_width": "150",
+    "banner_height": "61"
   },
 
   "settings": {
@@ -30,7 +34,7 @@
   "navigation_button": {
     "enable": true,
     "label": "Get Started",
-    "link": "https://github.com/zeon-studio/nextplate"
+    "link": "https://github.com/"
   },
 
   "disqus": {
