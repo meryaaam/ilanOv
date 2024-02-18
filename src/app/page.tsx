@@ -12,6 +12,7 @@ import AnimatedImage from "@/helpers/AnimatedImage";
 import { Features } from "@/partials/Features";
 import { MoreFeatures } from "@/partials/MoreFeatures";
 import { StreamlinedExperience } from "@/partials/StreamlinedExperience";
+import { Banner } from "@/helpers/Banner"; 
  
 const Home = () => {
 
@@ -65,13 +66,14 @@ const Home = () => {
               <div className="lg:col-6 md:col-6 mb-8 text-center">
                  {banner.image && (
                     <div className="col-10">
-                      {/* <Banner  />*/}
-                      <AnimatedImage
-                      
-                      />
+                     <Banner  /> 
+                      {/*<AnimatedImage />*/}
+                     
+                    
                     </div>
                   )}
             </div>
+            
           </div>
         </div>
       </section>
