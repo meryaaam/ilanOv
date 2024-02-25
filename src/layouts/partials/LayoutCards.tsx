@@ -31,9 +31,12 @@ function LayoutCards(props: { features: Feature[] }) {
                 layoutId={String(index)}
               > 
               <div className="title" >
-                <h2  
-                  dangerouslySetInnerHTML={markdownify(i.subtitle)}
-                /> 
+                <h2 dangerouslySetInnerHTML={markdownify(i.subtitle)} /> 
+                </div>
+                <div>
+                  <div className="placeholder"    ></div>
+                  <div className="placeholder"    ></div>
+                  <div className="placeholder"    ></div>
                 </div>
               </motion.div>
             ))}

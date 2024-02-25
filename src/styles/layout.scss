@@ -25,11 +25,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            .h{
+            h{
                 font-size: 1.7em ; 
                 padding-top: 8px;
             }
 
+          }
+          .placeholder
+          {
+            background: linear-gradient(135deg, rgb(238, 0, 153), rgb(221, 0, 238));
+            width: 40%;
           }
       }
   }
