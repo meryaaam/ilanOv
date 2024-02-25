@@ -6,6 +6,7 @@ import { Testimonial } from "@/types";
 import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion, AnimatePresence } from "framer-motion"
 
 interface PageData {
   notFound?: boolean;
@@ -74,19 +75,26 @@ const Testimonials = ({ data }: { data: PageData }) => {
                               />
                             </svg>
                           </div>
+                          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}  >
+
                           <blockquote
                             className="mt-8"
                             dangerouslySetInnerHTML={markdownify(item.content)}
                           />
+                          </motion.div>
                           <div className="mt-11 flex items-center">
                             <div className="text-dark dark:text-white">
-                              <ImageFallback
+                            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}  >
+
+                            <ImageFallback
                                 height={50}
                                 width={50}
                                 className="rounded-full"
                                 src={item.avatar}
                                 alt={item.name}
                               />
+                               </motion.div>
+
                             </div>
                             <div className="ml-4">
                               <h3
