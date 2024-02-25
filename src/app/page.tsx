@@ -12,7 +12,7 @@ import LayoutCards from "@/partials/LayoutCards";
 const Home = () => {
 
   const transformer = transform([0, 100], [0, 360], { clamp: true })
-  const rotate = transformer(500) // 180
+  const rotate = transformer(500)  
 
   const homepage = getListPage("homepage/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
