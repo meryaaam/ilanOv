@@ -3,14 +3,10 @@ import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types"; 
-import { transform } from "framer-motion"
-import AnimatedImage from "@/helpers/AnimatedImage";
-import { Features } from "@/partials/Features";
-import { MoreFeatures } from "@/partials/MoreFeatures";
-import { StreamlinedExperience } from "@/partials/StreamlinedExperience";
-import { Banner } from "@/helpers/Banner"; 
-import BannerSection from "@/partials/BannerSection";
-import DynamicContent from "@/helpers/DynamicContent";
+import { transform } from "framer-motion" 
+import { Features } from "@/partials/Features"; 
+import { StreamlinedExperience } from "@/partials/StreamlinedExperience"; 
+import BannerSection from "@/partials/BannerSection"; 
 import LayoutCards from "@/partials/LayoutCards";
  
 const Home = () => {
