@@ -16,15 +16,11 @@ function LayoutCards(props: { features: Feature[] }) {
     const selectedFeature = features.find((feature) => feature.id === clickedId);
 
     return (
-      <section
-      key={1}
-      className={`section-sm ${2 % 2 === 0 && "bg-gradient"}`}
-         > 
-  
+      
         <motion.div  className="cards-container"  >
           <div className='grid-container'   >
             {features.map((i , index:number) => (
-              <motion.div
+              <motion.div whileHover={{ scale: 1.2 }}  
                 className="box"
                 onClick={() => setClickedId(i.id)}
                 key={index}
@@ -32,7 +28,8 @@ function LayoutCards(props: { features: Feature[] }) {
               > 
               <div className="title" >
                 <h2 dangerouslySetInnerHTML={markdownify(i.subtitle)} /> 
-                </div>
+                 
+                 </div>
                 <div>
                   <div className="placeholder"    ></div>
                   <div className="placeholder"    ></div>
@@ -120,7 +117,7 @@ function LayoutCards(props: { features: Feature[] }) {
             )}
           </AnimatePresence>
         </motion.div>
-        </section>
+   
 
       );
     
