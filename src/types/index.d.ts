@@ -46,11 +46,13 @@ export type Author = {
 };
 
 export type Feature = {
+  id: string ;
   button: button;
   image: string;
   bulletpoints: string[];
   content: string;
   title: string;
+  subtitle: string;
 };
 
 export type Testimonial = {

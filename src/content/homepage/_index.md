@@ -12,7 +12,9 @@ banner:
 
 # Features
 features:
-  - title: "SynergySuite: Integrated Development and Marketing Solutions"
+  - id: 1
+    title: "SynergySuite: Integrated Development and Marketing Solutions"
+    subtitle: "SynergySuite"
     image: "/images/service-1.png"
     content: "Unlock the full potential of your business with SynergySuite, our comprehensive suite of integrated development and marketing solutions designed to maximize growth and impact."
     bulletpoints:
@@ -28,7 +30,9 @@ features:
       label: "Contact us"
       link: "#"
 
-  - title: "Empowering Development and Marketing Excellence"
+  - id: 2
+    title: "Empowering Development and Marketing Excellence"
+    subtitle: "Empowering Excellence"
     image: "/images/service-2.png"
     content: "Uncover the transformative capabilities of NextGen, a cutting-edge platform revolutionizing the landscape of development and marketing. Explore its key features and unleash the potential for unprecedented growth and success."
     bulletpoints:
@@ -41,7 +45,9 @@ features:
       label: "Get Started Now"
       link: "https://github.com/zeon-studio/nextplate"
 
-  - title: "The Top Reasons to Choose Next for Your Next Project"
+  - id: 3
+    title: "The Top Reasons to Choose Next for Your Next Project"
+    subtitle: "Why to choose Ilanov"
     image: "/images/service-3.png"
     content: "With Next, you can build modern and content-focused websites without sacrificing performance or ease of use."
     bulletpoints:
