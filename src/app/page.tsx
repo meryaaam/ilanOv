@@ -13,6 +13,7 @@ import { Features } from "@/partials/Features";
 import { MoreFeatures } from "@/partials/MoreFeatures";
 import { StreamlinedExperience } from "@/partials/StreamlinedExperience";
 import { Banner } from "@/helpers/Banner"; 
+import BannerSection from "@/partials/BannerSection";
  
 const Home = () => {
 
@@ -33,51 +34,11 @@ const Home = () => {
  
   return (
     <>
-      <SeoMeta />
-      <section className="section pt-14">
-        <div className="container">
-          <div className="row justify-center">
-            <div className="lg:col-6 md:col-6 mb-6 text-center">
+      <SeoMeta /> 
+      <BannerSection />
+      
 
-                <h1
-                  className="mb-4 text-h3 lg:text-h1"
-                  dangerouslySetInnerHTML={markdownify(banner.title)}
-                />
-                <p
-                  className="mb-8"
-                  dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
-                />
-
-                {banner.button!.enable && (
-                  <Link
-                    className="btn btn-primary"
-                    href={banner.button!.link}
-                    target={
-                      banner.button!.link.startsWith("http") ? "_blank" : "_self"
-                    }
-                    rel="noopener"
-                  >
-                    {banner.button!.label}
-
-                  </Link>
-                )}
-              </div>
-
-              <div className="lg:col-6 md:col-6 mb-8 text-center">
-                 {banner.image && (
-                    <div className="col-10">
-                     <Banner  /> 
-                      {/*<AnimatedImage />*/}
-                     
-                    
-                    </div>
-                  )}
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
+        
       {features.map((feature, index: number) => (
         <section
           key={index}
@@ -85,8 +46,7 @@ const Home = () => {
         >
           <div className="container">
             <div className="row items-center justify-between">
-              <div
- 
+              <div 
                 className={`mb:md-0 mb-6 md:col-5 ${
                   index % 2 !== 0 && "md:order-2"
                 }`}
@@ -97,11 +57,9 @@ const Home = () => {
                   width={520}
                   alt={feature.title}
                 />
-
-
-
+ 
               </div>
-              <div
+              {/*<div
                 className={`md:col-7 lg:col-6 ${
                   index % 2 !== 0 && "md:order-1"
                 }`}
@@ -122,7 +80,7 @@ const Home = () => {
                     </li>
                   ))}
                   </ul>*/}
-                {feature.button.enable && (
+                {/*{feature.button.enable && (
                   <Link
                     className="btn btn-primary mt-5"
                     href={feature.button.link}
@@ -130,7 +88,7 @@ const Home = () => {
                     {feature.button.label}
                   </Link>
                 )}
-              </div>
+                </div>*/}
             </div>
           </div>
         </section>
