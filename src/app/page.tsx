@@ -1,12 +1,8 @@
-import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
-import { markdownify } from "@/lib/utils/textConverter";
+import { getListPage } from "@/lib/contentParser"; 
 import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
-import { Button, Feature } from "@/types";
-import Link from "next/link";
-import { FaCheck } from "react-icons/fa";
+import { Button, Feature } from "@/types"; 
 import { transform } from "framer-motion"
 import AnimatedImage from "@/helpers/AnimatedImage";
 import { Features } from "@/partials/Features";
@@ -14,6 +10,8 @@ import { MoreFeatures } from "@/partials/MoreFeatures";
 import { StreamlinedExperience } from "@/partials/StreamlinedExperience";
 import { Banner } from "@/helpers/Banner"; 
 import BannerSection from "@/partials/BannerSection";
+import DynamicContent from "@/helpers/DynamicContent";
+import LayoutCards from "@/partials/LayoutCards";
  
 const Home = () => {
 
@@ -35,71 +33,12 @@ const Home = () => {
   return (
     <>
       <SeoMeta /> 
-      <BannerSection />
-      
-
-        
-      {features.map((feature, index: number) => (
-        <section
-          key={index}
-          className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
-        >
-          <div className="container">
-            <div className="row items-center justify-between">
-              <div 
-                className={`mb:md-0 mb-6 md:col-5 ${
-                  index % 2 !== 0 && "md:order-2"
-                }`}
-              >
-                <ImageFallback
-                  src={feature.image}
-                  height={480}
-                  width={520}
-                  alt={feature.title}
-                />
- 
-              </div>
-              {/*<div
-                className={`md:col-7 lg:col-6 ${
-                  index % 2 !== 0 && "md:order-1"
-                }`}
-              >
-                <h2
-                  className="mb-4"
-                  dangerouslySetInnerHTML={markdownify(feature.title)}
-                />
-                <p
-                  className="mb-8 text-lg"
-                  dangerouslySetInnerHTML={markdownify(feature.content)}
-                />
-                {/*<ul>
-                  {feature.bulletpoints.map((bullet: string) => (
-                    <li className="relative mb-4 pl-6" key={bullet}>
-                      <FaCheck className={"absolute left-0 top-1.5"} />
-                      <span dangerouslySetInnerHTML={markdownify(bullet)} />
-                    </li>
-                  ))}
-                  </ul>*/}
-                {/*{feature.button.enable && (
-                  <Link
-                    className="btn btn-primary mt-5"
-                    href={feature.button.link}
-                  >
-                    {feature.button.label}
-                  </Link>
-                )}
-                </div>*/}
-            </div>
-          </div>
-        </section>
-      ))}
-
+      <BannerSection />  
+      <LayoutCards features={features}/>         
       <Testimonials data={testimonial} />
       <Features   />
-      <div className="relative z-10   overflow-x-clip ">
-     
-       
-       <StreamlinedExperience />
+      <div className="relative z-10   overflow-x-clip "> 
+        <StreamlinedExperience />
       </div>
       <CallToAction data={callToAction} />
     </>
