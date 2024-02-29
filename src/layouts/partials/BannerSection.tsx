@@ -1,3 +1,5 @@
+import ArrowDraw from "@/components/ArrowDraw"; 
+import LineDrawingAnimation from "@/components/LineDrawingAnimation";
 import AnimatedImage from "@/helpers/AnimatedImage"; 
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -18,15 +20,20 @@ const {
 const BannerSection = () => {
   return (
     <>
+   
        <section className="section pt-14">
         <div className="container">
           <div className="row justify-center">
             <div className="lg:col-6 md:col-6 mb-6 text-center">
-
-                <h1
+             
+              <LineDrawingAnimation />  
+              
+                <h1 
                   className="mb-4 text-h3 lg:text-h1"
                   dangerouslySetInnerHTML={markdownify(banner.title)}
                 />
+              
+                
                 <p
                   className="mb-8"
                   dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
