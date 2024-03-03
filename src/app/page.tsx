@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <>
       <SeoMeta /> 
-      <BannerSection />  
+      <BannerSection />   
       <LayoutCards features={features}/>         
       <Testimonials data={testimonial} />
       <Features   />

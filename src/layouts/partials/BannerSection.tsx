@@ -28,7 +28,6 @@ const BannerSection = () => {
           <div className="row justify-center">
             <div className="lg:col-6 md:col-6 mb-6 text-center">
              
-              <LineDrawingAnimation />  
               <br/>
               
                 <h1 
@@ -58,13 +57,13 @@ const BannerSection = () => {
               </div>
 
               <div className="lg:col-6 md:col-6 mb-8 text-center">
-              {/**   {banner.image && (
+               {banner.image && (
                     <div className="col-10"> 
                       <AnimatedImage /> 
                     </div>
-                  )}*/} 
+                  )}
 
-                  <Banner/>
+                
             </div>
             
           </div>
