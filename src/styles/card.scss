@@ -1,0 +1,86 @@
+$gutter: 20px;
+
+.container,
+.element {
+    padding: $gutter / 2;
+}
+
+.flex {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.row {
+    flex-flow: row wrap;
+}
+
+.col {
+    flex-flow: column wrap;
+}
+
+.element {
+    min-width: 100px;
+}
+
+.content {
+    flex: 1 100%;
+}
+
+.structure {
+    min-height: 480px;
+}
+
+.structure-1 {
+    flex: 1 percentage(5/9);
+}
+
+.a {
+    flex: 1 percentage(2/5);
+}
+
+.b {
+    flex: 1 percentage(3/5);
+}
+
+.structure-1-2-1 {
+    flex: 1 percentage(1/5);
+}
+
+.c,
+.d {
+    flex: 1 percentage(1/2);
+}
+
+.e {
+    flex: 1 percentage(4/5);
+}
+
+.structure-2 {
+    flex: 1 percentage(4/9);
+}
+
+.f {
+    flex: 1 percentage(2/4);
+}
+
+.structure-2-2 {
+    flex: 1 percentage(2/4);
+}
+
+.g {
+    flex: 1 percentage(3/4);
+}
+
+.h {
+    flex: 1 percentage(1/4);
+}
+
+@media (max-width: 768px) {
+    .structure-1,
+    .structure-2,
+    .f,
+    .structure-2-2 {
+        flex: 1 100%;
+        min-height: 480px;
+    }
+}

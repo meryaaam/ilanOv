@@ -66,7 +66,7 @@ const Testimonials = ({ data }: { data: PageData }) => {
                               width="33"
                               height="20"
                               viewBox="0 0 33 20"
-                              fill="none"
+                              fill="#f88ee6"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
