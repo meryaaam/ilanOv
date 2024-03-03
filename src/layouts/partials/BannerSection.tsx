@@ -7,6 +7,7 @@ import Link from "next/link";
 import { motion } from 'framer-motion';
 import AnimatedSvg from "@/helpers/AnimatedSvg";
 import { Banner } from "@/helpers/Banner";
+import Image from "next/image";
 
 const homepage = getListPage("homepage/_index.md");
  const { frontmatter } = homepage;
@@ -23,13 +24,12 @@ const BannerSection = () => {
   return (
     <>
    
-       <section className="section pt-14">
-        <div className="container">
+       <section className="section pt-14"   >
+       
+        <div className="container" >
           <div className="row justify-center">
-            <div className="lg:col-6 md:col-6 mb-6 text-center">
-             
-              <br/>
-              
+          
+            <div className="lg:col-6 md:col-6 mb-6 text-center">        
                 <h1 
                   className="mb-4 text-h3 lg:text-h1"
                   dangerouslySetInnerHTML={markdownify(banner.title)}
@@ -56,15 +56,15 @@ const BannerSection = () => {
                 )}
               </div>
 
-              <div className="lg:col-6 md:col-6 mb-8 text-center">
+              {/*<div className="lg:col-6 md:col-6 mb-8 text-center">
                {banner.image && (
                     <div className="col-10"> 
                       <AnimatedImage /> 
                     </div>
-                  )}
+               )}
 
                 
-            </div>
+            </div>*/}
             
           </div>
         </div>
