@@ -28,14 +28,15 @@ const BannerSection = () => {
        
         <div className="container" >
           <div className="row justify-center">
-          
+           
             <div className="lg:col-6 md:col-6 mb-6 text-center">        
                 <h1 
                   className="mb-4 text-h3 lg:text-h1"
                   dangerouslySetInnerHTML={markdownify(banner.title)}
                 />
-               
-                  
+                    
+            
+                
                 <p
                   className="mb-8"
                   dangerouslySetInnerHTML={markdownify(banner.content ?? "")}

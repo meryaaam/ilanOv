@@ -32,10 +32,7 @@ const Home = () => {
       <BannerSection />   
       <LayoutCards features={features}/>         
       <Testimonials data={testimonial} />
-      <Features   />
-      <div className="relative z-10   overflow-x-clip "> 
-        <StreamlinedExperience />
-      </div>
+       
       <CallToAction data={callToAction} />
     </>
   );

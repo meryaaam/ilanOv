@@ -197,3 +197,16 @@
       }
   }
 }
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.display-1.with-breaking:hover {
+  animation-play-state: running;
+}
